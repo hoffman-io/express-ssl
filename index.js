@@ -2,15 +2,8 @@
 
 module.exports = function ssl(options) {
   options = options || {};
-  var enabled = false;
-
-  if (process.env.NODE_ENV === 'production') {
-    enabled = true;
-  }
-
-  if (options.disabled === true) {
-    enabled = false;
-  }
+	var env = process.env.NODE_ENV || 'development';
+  var enabled = (env !== 'development' && options.disabled !== true);
 
   return sslMiddleware;
 
@@ -18,8 +11,9 @@ module.exports = function ssl(options) {
     if (!enabled) return next();
 
     var isSecure = req.secure;
+    var trustProxy = (process.env.TRUST_PROXY === 'true');
 
-    if (!isSecure && options.trustProxy) {
+    if (!isSecure && trustProxy) {
       isSecure = req.headers['x-forwarded-proto'] === 'https';
     }
 

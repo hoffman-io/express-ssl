@@ -1,6 +1,6 @@
 {
   "name": "express-ssl",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Enforce SSL for Express apps",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jclem/express-ssl"
+    "url": "https://github.com/hoffman-io/express-ssl"
   },
-  "author": "Jonathan Clem",
+  "author": "Arvind Paul",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jclem/express-ssl/issues"
+    "url": "https://github.com/hoffman-io/express-ssl/issues"
   },
-  "homepage": "https://github.com/jclem/express-ssl"
+  "homepage": "https://github.com/hoffman-io/express-ssl"
 }
